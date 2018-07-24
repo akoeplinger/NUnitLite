@@ -319,8 +319,12 @@ namespace NUnitLite.Runner
 
                 if (resultFormat == "nunit2")
                     new NUnit2XmlOutputWriter(startTime).WriteResultFile(result, resultFile);
-                else
+                else if (resultFormat == "nunit3")
                     new NUnit3XmlOutputWriter(startTime).WriteResultFile(result, resultFile);
+                else if (resultFormat == "xunit")
+                    new XunitXmlOutputWriter(startTime).WriteResultFile(result, resultFile);
+                else
+                    throw new Exception("Unknown resultFormat.");
 
                 Console.WriteLine();
                 Console.WriteLine("Results saved as {0}.", resultFile);

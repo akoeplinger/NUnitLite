@@ -313,7 +313,7 @@ namespace NUnitLite.Runner
                     break;
                 case "format":
                     resultFormat = val;
-                    if (resultFormat != "nunit3" && resultFormat != "nunit2")
+                    if (resultFormat != "nunit3" && resultFormat != "nunit2" && resultFormat != "xunit")
                         InvalidOption(option);
                     break;
                 case "out":
